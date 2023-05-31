@@ -1,0 +1,28 @@
+* here i have implement this task:-
+  http://localhost:8888/notebooks/Untitled.ipynb?kernel_name=python3#
+
+* these are queries and output:-
+
+import pandas as pd
+
+departments=pd.read_csv("E:\database/Departments.csv")
+
+employees=pd.read_csv("E:\database/Employees.csv")
+
+salaries=pd.read_csv("E:\database/Salaries.csv")
+
+df=pd.merge(departments,employees, left_on='ID',right_on='DEPT ID')
+
+data= pd.merge(df,salaries,left_on="ID_y",right_on='EMP_ID')
+
+data
+
+x=data.groupby(['NAME_x'])['AMT (USD)'].mean()
+
+x.sort_values(ascending=False).head(3)
+
+NAME_x
+Sales      7045.16129
+Ops        6420.00000
+Finance    6360.31746
+Name: AMT, dtype: float64
