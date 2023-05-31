@@ -2,8 +2,8 @@
 
 Solution - 
 
-Select d.NAME as "DEPT_NAME", avg(s.AMT) as "AVG_MONTHLY_SALARY (USD)" from Salaries as s
+Select d.NAME as "DEPT_NAME", avg(s.AMT(USD)) as "AVG_MONTHLY_SALARY (USD)" from Salaries as s
 join Employees as e  On e.id=s.EMP_ID
 Join Departments as d  On d.ID=e.DEPT_ID
 Group by d.Name
-order by avg(s.AMT) desc limit 3 ;
+order by avg(s.AMT(USD)) desc limit 3 ;
