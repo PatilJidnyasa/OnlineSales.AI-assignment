@@ -1,0 +1,9 @@
+* Fetch top 3 departments along with their name and average monthly salary.
+
+Solution - 
+
+Select d.NAME as "DEPT_NAME", avg(s.AMT) as "AVG_MONTHLY_SALARY (USD)" from Salaries as s
+join Employees as e  On e.id=s.EMP_ID
+Join Departments as d  On d.ID=e.DEPT_ID
+Group by d.Name
+order by avg(s.AMT) desc limit 3 ;
